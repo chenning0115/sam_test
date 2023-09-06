@@ -30,6 +30,7 @@ def initial_process(HSI, Label, param):
     # Get lable
     input_label, loss_label, train_label, test_label \
         = dls.get_label(input_location), dls.get_label(loss_location), dls.get_label(train_location), dls.get_label(test_location)
+    print(input_label)
 
     loss_direct = torch.from_numpy(loss_direct).to(param.device)
     test_direct = torch.from_numpy(test_direct).to(param.device)

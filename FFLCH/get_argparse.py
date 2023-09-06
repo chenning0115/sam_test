@@ -20,7 +20,7 @@ class set_args:
         params = argparse.ArgumentParser(description="Training Process Params")
         params.add_argument("--hsi", type=str, default="./dataset/hsi/Pavia.mat", help="HSI dir")
         params.add_argument("--label", type=str, default="./dataset/label/Pavia_gt.mat", help="Lable dir")
-        params.add_argument("--device", type=str, default="cuda:0", help="choose device for training")
+        params.add_argument("--device", type=str, default="cuda:7", help="choose device for training")
         params.add_argument("--checkpoint_path", type=str, default="../segment_anything/sam_vit_b_01ec64.pth",
                             help="sam model path, must be same as model")
         params.add_argument("--mode", type=str, default="vit_b", help="sam model, must be same as checkpoint_path")
@@ -37,8 +37,8 @@ class set_args:
             self._args = params.parse_args()
             self._args.hsi = "./dataset/hsi/PaviaU.mat"
             self._args.label = "./dataset/label/PaviaU_gt.mat"
-            self._args.checkpoint_path = "../segment_anything/sam_vit_h_4b8939.pth"
-            self._args.mode = "vit_h"
+            # self._args.checkpoint_path = "../segment_anything/sam_vit_h_4b8939.pth"
+            # self._args.mode = "vit_h"
         if self._mat_name == "salinas":
             self._args = params.parse_args()
             self._args.hsi = "./dataset/hsi/Salinas_corrected.mat"

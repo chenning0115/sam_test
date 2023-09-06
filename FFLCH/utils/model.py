@@ -1,4 +1,6 @@
 import torch
+import sys
+sys.path.append('../')
 import torch.nn as nn
 import torch.optim as optim
 from segment_anything import sam_model_registry, SamPredictor, SamAutomaticMaskGenerator

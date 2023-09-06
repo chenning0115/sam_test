@@ -83,9 +83,9 @@ class FFLCHs(model):
             self.IntoSAM.eval()
             per_accs, _, mlp_out, sam_out = self.predict(HSI.shape, torch_train_pic)
             # Test use only
-            data_process.show_pic(mlp_out, self.train_location, self.current_class, self.param.train_num, self.epoch, "MLP")
-            data_process.show_pic(sam_out, self.train_location, self.current_class, self.param.train_num, self.epoch,
-                                  "test", replace=True)
+            # data_process.show_pic(mlp_out, self.train_location, self.current_class, self.param.train_num, self.epoch, "MLP")
+            # data_process.show_pic(sam_out, self.train_location, self.current_class, self.param.train_num, self.epoch,
+                                #   "test", replace=True)
             print(f"test AA is {per_accs}, epoch is {self.epoch}")
         # ----------------------------------------------------Test End--------------------------------------------------
         if self.epoch == self.param.epochs and self.epoch != 1:

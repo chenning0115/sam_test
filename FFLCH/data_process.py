@@ -180,8 +180,8 @@ def get_label(location: dict) \
     # Set corresponding class to foreground label (set to 1)
     for cls in range(max_classes):
         index_end += per_class_len[cls]
-        data_label[cls][index_begin: index_end] = 1
         index_begin += per_class_len[cls]
+        data_label[cls][index_begin: index_end] = 1
     return data_label
 
 
